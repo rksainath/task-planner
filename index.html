@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Task List</title>
+    <style>
+        .card-action{
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -15,25 +20,38 @@
             <div class="col s12">
                 <div id="main" class="card">
                     <div class="card-content">
-                        <span class="card-title"><i class="fa fa-tasks prefix"></i> Task Planner</span>
+                        <span class="card-title card-panel teal white-text"><i class="fa fa-tasks prefix"></i> Task Planner</span>
                         <div class="row">
                             <form id="task-form">
                                 <div class="input-field col s12">
                                     <input type="text" name="task" id="task">
                                     <label for="task"><i class="fa fa-pencil-square-o"></i> Add new task</label>
                                 </div>
-                                <input type="submit" value="Add Task" class="btn blue">
+                                <input type="submit" value="Add Task" class="btn teal">
                             </form>
                         </div>
                     </div>
                     <div class="card-action">
-                        <h5 id="task-title">Tasks</h5>
+                        <!-- <h5 id="task-title" class="center-align">Tasks</h5> -->
                         <div class="input-field col s12">
                             <input type="text" name="filter" id="filter">
                             <label for="filter"><i class="fa fa-filter"></i> Filter tasks</label>
                         </div>
-                        <ul class="collection"></ul>
-                        <a href="#" class="clear-tasks btn blue">Clear All</a>
+
+                        <div class="row" id="task-planner">   
+                            <div class="col s6 #e53935 red darken-2">
+                                <h5 id="pending-tasks" class="center-align white-text">Pending</h5>
+                                <div class="divider"></div>
+                                <ul class="pending-collection"></ul>
+                            </div>
+                            <div class="col s6 teal">
+                                <h5 id="completed-tasks" class="center-align white-text">Completed</h5>
+                                <div class="divider"></div>
+                                <ul class="completed-collection"></ul>
+                            </div>
+                          </div>
+                        <!-- <ul class="collection"></ul> -->
+                        <a href="#" class="clear-tasks btn teal">Clear All</a>
                     </div>
                 </div>
             </div>
